@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<table id="datalist" class="chinesefont-small display">
+    <thead>
+    <tr>
+
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for url, id, name, description in title %}
+    <tr>
+
+        <td><a href="{{url}}">{{id}}</a></td>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

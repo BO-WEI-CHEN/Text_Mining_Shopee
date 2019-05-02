@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<h2>請輸入查詢詞彙</h2>
+<form action="{{ url_for('analysis') }}" method="POST">
+    <textarea name="text1" rows="1" cols="12"></textarea>
+    <p></p>
+    <button type="submit" name="button">送出</button>
+</form>
+
+{% if result %}
+<table id="datalist" class="chinesefont-small display">
+    <thead>
+    <tr>
+        <th>term</th>
+        <th>freq</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for term, freq in result %}
+    <tr>
+        <td>{{term}}</td>
+        <td>{{freq}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}

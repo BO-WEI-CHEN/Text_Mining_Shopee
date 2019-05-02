@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FDA語意分析專案</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {# MEDIUM STYLE EDITOR#}
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css"
+          media="screen" charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+.chinesefont{
+font-family: 'cwTeXYen', sans-serif;
+font-size: 1.5em;
+}
+
+
+      .chinesefont-small{
+font-family: 'cwTeXYen', sans-serif;
+font-size: 1.2em;
+}
+.techfont{
+font-family: 'Russo One',sans-serif;
+font-size: 1.5em;
+}
+
+.bigbrand{
+  font-size: 1.5em;
+
+}
+
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.postdate{
+  text-align:center;
+}
+.posttitle{
+  font-family: 'Russo One',sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+.postcontent{
+font-family: 'Montserrat';
+font-size: 1.5em;
+}
+
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
+.arrow{
+  position:absolute;
+  right:500px;
+  top:200px;
+
+}
+.save{
+  font-weight: bold;
+  font-size: 1.8em
+}
+select{
+  font-weight: bold;
+  font-size: 1.5em
+}
+option{
+  font-weight: bold;
+  font-size: 1.5em
+}
+
+
+
+
+
+    </style>
+    <!--Custom Css -->
+    <!--Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+  $(document).ready( function () {
+      $('#datalist').DataTable();
+  } );
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<!-- NavBar -->
+<nav class="navbar navbar-default techfont custom-navbar">
+    <div class="container">
+        <ul class="chinesefont nav navbar-nav">
+            <li><a class="navbar-brand bigbrand" href="{{ url_for('index') }}">FDA</a></li>
+            <li><a href="{{ url_for('datalist') }}">資料列表</a></li>
+            <li><a href="{{url_for('analysis')}}">基本文字探勘分析</a>
+            <li>
+        </ul>
+
+        <ul class="chinesefont nav navbar-nav navbar-right">
+
+        </ul>
+    </div>
+</nav>
+
+<!-- CONTENT BLOCK -->
+<div class="content container">
+    <div class="row">
+        <div class="col-mid-8">
+            <div class="blog_post">
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
