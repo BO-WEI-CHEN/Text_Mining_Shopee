@@ -6,7 +6,7 @@ from utils import word_seg, count_term_freq
 app = Flask(__name__)
 
 
-# coneect database
+# coneect database yaya
 
 
 @app.route('/')
